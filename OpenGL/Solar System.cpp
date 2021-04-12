@@ -11,11 +11,11 @@ directional light:  on, off (default)  -- optional
 
 Right mouse-based menu
 display
-mode:  wireframe, filled – flat shading (default), filled – smooth shading
-On keyboard button ‘+’  rotate through the three levels of detail
+mode:  wireframe, filled â€“ flat shading (default), filled â€“ smooth shading
+On keyboard button â€˜+â€™  rotate through the three levels of detail
 viewing: use polar coordinates to allow the viewer to move their viewpoint along a sphere surrounding the building. When zooming in, the LOD should switch automatically.
 
-As before, please add a star ‘*’ after the currently selected mouse-based menu option as feedback to the user.  
+As before, please add a star â€˜*â€™ after the currently selected mouse-based menu option as feedback to the user.  
 */
 
 
@@ -45,15 +45,15 @@ void init(void)
 void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(0.0, 1.0, 1.0);
+	//gold ~ sun
+	glColor3f(1.0, 0.84, 0.0);
 	glPushMatrix();
 	glutSolidSphere(1.0, 20, 16); // draw sun 
 	glRotatef((GLfloat)year, 0.0, 1.0, 0.0);
 	glTranslatef(2.0, 0.0, 0.0);
 	glRotatef((GLfloat)day, 0.0, 1.0, 0.0);
-
+	//planet
 	glColor3f(0.0, 0.0, 1.0);
-
 	glutSolidSphere(0.2, 10, 8); // draw smaller planet 
 	glPopMatrix();
 	glutSwapBuffers();
